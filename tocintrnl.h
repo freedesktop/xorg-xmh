@@ -39,6 +39,11 @@ typedef enum {
     unknown, valid, invalid
 } ValidType;
 
+/* silly IBM compiler, but it's probably just as silly to use bitfields. */
+#ifdef AIXV5 /* probably want !gcc too */
+#define FateType int
+#endif
+
 typedef struct _MsgRec {
     Toc		toc;		/* Which toc this message is in. */
     Toc		desttoc;	/* Folder to copy or move to (NULL if none) */
@@ -59,6 +64,10 @@ typedef struct _MsgRec {
 				   composition around */
     unsigned	unused:2;
 } MsgRec;
+
+#ifdef AIXV5 /* probably want !gcc too */
+#undef FateType
+#endif
 
 typedef struct _TocRec {
    Scrn		*scrn;		/* Scrns containing this table of contents. */
