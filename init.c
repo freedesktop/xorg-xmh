@@ -25,7 +25,7 @@
  * without specific, written prior permission.
  *
  */
-/* $XFree86: xc/programs/xmh/init.c,v 1.6 2002/04/05 21:06:28 dickey Exp $ */
+/* $XFree86$ */
 
 /* Init.c - Handle start-up initialization. */
 

@@ -24,7 +24,7 @@
  * without specific, written prior permission.
  */
 
-/* $XFree86: xc/programs/xmh/tocintrnl.h,v 1.2 2003/05/27 22:27:08 tsi Exp $ */
+/* $XFree86$ */
 
 /* Includes for modules implementing toc stuff. */
 

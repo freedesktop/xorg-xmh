@@ -24,7 +24,7 @@
  * used in advertising or publicity pertaining to distribution of the software
  * without specific, written prior permission.
  */
-/* $XFree86: xc/programs/xmh/compfuncs.c,v 1.3 2002/04/05 21:06:28 dickey Exp $ */
+/* $XFree86$ */
 
 /* comp.c -- action procedures to handle composition buttons. */
 
