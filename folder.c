@@ -24,7 +24,7 @@
  * used in advertising or publicity pertaining to distribution of the software
  * without specific, written prior permission.
  */
-/* $XFree86$ */
+/* $XFree86: xc/programs/xmh/folder.c,v 1.4 2002/04/05 21:06:28 dickey Exp $ */
 
 /* folder.c -- implement buttons relating to folders and other globals. */
 
