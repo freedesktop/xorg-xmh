@@ -1,5 +1,5 @@
 /* $XConsortium: tocintrnl.h,v 2.18 91/07/14 18:53:37 converse Exp $ */
-/* $XdotOrg$ */
+/* $XdotOrg: xc/programs/xmh/tocintrnl.h,v 1.2 2004/04/23 19:54:58 eich Exp $ */
 /*
  *			  COPYRIGHT 1987
  *		   DIGITAL EQUIPMENT CORPORATION
