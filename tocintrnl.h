@@ -1,4 +1,5 @@
 /* $XConsortium: tocintrnl.h,v 2.18 91/07/14 18:53:37 converse Exp $ */
+/* $XdotOrg$ */
 /*
  *			  COPYRIGHT 1987
  *		   DIGITAL EQUIPMENT CORPORATION
