@@ -21,7 +21,7 @@
 
 bin_PROGRAMS = xmh
 
-xmh_CFLAGS = $(DEP_CFLAGS) -DXVENDORNAME=\"X.org\ Foundation\" -DXORG_RELEASE=\"$(VERSION)\"
+xmh_CFLAGS = $(DEP_CFLAGS) -DXVENDORNAME=\"X.org\ Foundation\" -DXORG_RELEASE=\"$(VERSION)\" -D_BSD_SOURCE
 xmh_LDADD = $(DEP_LIBS)
 
 xmh_SOURCES =	\
