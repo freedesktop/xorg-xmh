@@ -85,7 +85,7 @@ dist_bitmap_DATA = black6 box6
 
 #
 
-EXTRA_DIST = $(foreach FILE, $(APPDEFAULTFILES), $(FILE).ad) Xmh.sample
+EXTRA_DIST = $(APPDEFAULTFILES:%=%.ad) Xmh.sample
 
 CLEANFILES = $(APPDEFAULTFILES)
 
