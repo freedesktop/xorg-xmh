@@ -59,7 +59,7 @@ xmh_SOURCES =	\
         viewfuncs.c \
         xmh.h
 
-dist_man_MANS = \
+dist_man1_MANS = \
         xmh.man
 
 # App default files  (*.ad)
