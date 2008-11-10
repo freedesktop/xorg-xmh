@@ -62,20 +62,12 @@ xmh_SOURCES =	\
 appman_PRE = \
         xmh.man
 
-# App default files  (*.ad)
+# App default files
 
 appdefaultdir = @appdefaultdir@
 
-
-APPDEFAULTFILES = \
+dist_appdefault_DATA = \
         app-defaults/Xmh
-
-SUFFIXES = .ad
-
-.ad:
-	cp $< $@
-
-appdefault_DATA = $(APPDEFAULTFILES)
 
 # bitmap files
 
@@ -85,9 +77,7 @@ dist_bitmap_DATA = black6 box6
 
 #
 
-EXTRA_DIST = $(APPDEFAULTFILES:%=%.ad) Xmh.sample
-
-CLEANFILES = $(APPDEFAULTFILES)
+EXTRA_DIST = Xmh.sample
 
 
 appmandir = $(APP_MAN_DIR)
@@ -95,7 +85,7 @@ appmandir = $(APP_MAN_DIR)
 appman_DATA = $(appman_PRE:man=@APP_MAN_SUFFIX@)
 
 EXTRA_DIST += $(appman_PRE)
-CLEANFILES += $(appman_DATA)
+CLEANFILES = $(appman_DATA)
 
 SED = sed
 
@@ -116,7 +106,7 @@ MAN_SUBSTS = \
 	-e 's|__miscmansuffix__|$(MISC_MAN_SUFFIX)|g' \
 	-e 's|__filemansuffix__|$(FILE_MAN_SUFFIX)|g'
 
-SUFFIXES += .$(APP_MAN_SUFFIX) .man
+SUFFIXES = .$(APP_MAN_SUFFIX) .man
 
 .man.$(APP_MAN_SUFFIX):
 	sed $(MAN_SUBSTS) < $< > $@
