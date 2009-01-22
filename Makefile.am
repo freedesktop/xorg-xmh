@@ -21,7 +21,7 @@
 
 bin_PROGRAMS = xmh
 
-xmh_CFLAGS = $(XMH_CFLAGS) -DXVENDORNAME=\"X.org\ Foundation\" -DXORG_RELEASE=\"$(VERSION)\" -D_BSD_SOURCE
+AM_CFLAGS = $(XMH_CFLAGS) -DXVENDORNAME=\"X.org\ Foundation\" -DXORG_RELEASE=\"$(VERSION)\" -D_BSD_SOURCE
 xmh_LDADD = $(XMH_LIBS)
 
 xmh_SOURCES =	\
@@ -63,6 +63,7 @@ appman_PRE = \
         xmh.man
 
 # App default files
+DISTCHECK_CONFIGURE_FLAGS = --with-appdefaultdir=\$${datadir}/X11/app-defaults
 
 appdefaultdir = @appdefaultdir@
 
@@ -117,6 +118,6 @@ MAINTAINERCLEANFILES = ChangeLog
 .PHONY: ChangeLog
 
 ChangeLog:
-	(GIT_DIR=$(top_srcdir)/.git git-log > .changelog.tmp && mv .changelog.tmp ChangeLog; rm -f .changelog.tmp) || (touch ChangeLog; echo 'git directory not found: installing possibly empty changelog.' >&2)
+	$(CHANGELOG_CMD)
 
 dist-hook: ChangeLog

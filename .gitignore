@@ -19,3 +19,7 @@ stamp-h1
 xmh
 xmh.1
 *~
+*.o
+xmh-*.tar.*
+ChangeLog
+tags
