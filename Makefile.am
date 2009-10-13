@@ -21,7 +21,9 @@
 
 bin_PROGRAMS = xmh
 
-AM_CFLAGS = $(XMH_CFLAGS) -DXVENDORNAME=\"X.org\ Foundation\" -DXORG_RELEASE=\"$(VERSION)\" -D_BSD_SOURCE
+AM_CFLAGS = $(CWARNFLAGS) $(XMH_CFLAGS) -D_BSD_SOURCE \
+	-DXVENDORNAME=\"X.Org\ Foundation\" -DXORG_RELEASE=\"$(VERSION)\"
+
 xmh_LDADD = $(XMH_LIBS)
 
 xmh_SOURCES =	\
@@ -104,7 +106,7 @@ MAN_SUBSTS = \
 SUFFIXES = .$(APP_MAN_SUFFIX) .man
 
 .man.$(APP_MAN_SUFFIX):
-	sed $(MAN_SUBSTS) < $< > $@
+	$(AM_V_GEN)$(SED) $(MAN_SUBSTS) < $< > $@
 
 EXTRA_DIST += ChangeLog
 MAINTAINERCLEANFILES = ChangeLog
