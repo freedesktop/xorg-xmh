@@ -21,8 +21,7 @@
 
 bin_PROGRAMS = xmh
 
-AM_CFLAGS = $(CWARNFLAGS) $(XMH_CFLAGS) -D_BSD_SOURCE \
-	-DXVENDORNAME=\"X.Org\ Foundation\" -DXORG_RELEASE=\"$(VERSION)\"
+AM_CFLAGS = $(CWARNFLAGS) $(XMH_CFLAGS) -D_BSD_SOURCE
 
 xmh_LDADD = $(XMH_LIBS)
 
@@ -57,7 +56,6 @@ xmh_SOURCES =	\
         tsource.h \
         tsourceP.h \
         util.c \
-        version.h \
         viewfuncs.c \
         xmh.h
 
