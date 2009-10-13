@@ -70,12 +70,6 @@ appdefaultdir = @appdefaultdir@
 dist_appdefault_DATA = \
         app-defaults/Xmh
 
-# bitmap files
-
-bitmapdir = $(includedir)/X11/bitmaps
-
-dist_bitmap_DATA = black6 box6
-
 #
 
 EXTRA_DIST = Xmh.sample
