@@ -39,7 +39,7 @@ AC_PROG_INSTALL
 XORG_DEFAULT_OPTIONS
 
 # Checks for pkg-config packages
-PKG_CHECK_MODULES(XMH, xaw7 xmu xt x11 xbitmaps)
+PKG_CHECK_MODULES(XMH, xaw7 xmu xt x11 xbitmaps >= 1.1.0)
 AC_SUBST(XMH_CFLAGS)
 AC_SUBST(XMH_LIBS)
 
