@@ -33,15 +33,10 @@ XORG_MACROS_VERSION(1.8)
 
 AM_CONFIG_HEADER(config.h)
 
-AC_PROG_CC
-AC_PROG_INSTALL
-
 XORG_DEFAULT_OPTIONS
 
 # Checks for pkg-config packages
 PKG_CHECK_MODULES(XMH, xaw7 xmu xt x11 xbitmaps >= 1.1.0)
-AC_SUBST(XMH_CFLAGS)
-AC_SUBST(XMH_LIBS)
 
 PKG_CHECK_MODULES(APPDEFS, xt)
 xt_appdefaultdir=`$PKG_CONFIG --variable=appdefaultdir xt`
