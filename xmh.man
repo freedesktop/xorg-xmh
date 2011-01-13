@@ -89,7 +89,7 @@ If you do not already have a .mh_profile, you can create one (and
 everything else you need) by typing ``inc'' to the shell.  You should
 do this before using \fIxmh\fR to incorporate new mail.
 .PP
-For more information, refer to the \fImh(1)\fP documentation.
+For more information, refer to the \fImh(__appmansuffix__)\fP documentation.
 .PP
 Much of the user interface of \fIxmh\fP is configured in the \fIXmh\fP
 application class defaults file; if this file was not installed properly
@@ -410,7 +410,7 @@ command is \fBXmhUseAsComposition()\fR.
 .B Print
 Print the selected messages, or the current message if none are selected.
 \fIxmh\fR normally prints by invoking
-the \fIenscript\fR(1) command, but this can be customized with the \fIxmh\fP
+the \fIenscript\fR(__appmansuffix__) command, but this can be customized with the \fIxmh\fP
 application-specific resource \fBPrintCommand\fR.
 The corresponding action is \fBXmhPrint()\fR.
 
@@ -492,7 +492,7 @@ The corresponding action is \fBXmhSaveView()\fR.
 .TP 18
 .B Print
 Print the viewed message.  \fIxmh\fR prints by invoking
-the \fIenscript\fR(1) command, but this can be customized with the
+the \fIenscript\fR(__appmansuffix__) command, but this can be customized with the
 application-specific resource \fBPrintCommand\fR.
 The corresponding action procedure is \fBXmhPrintView()\fR.
 .TP 18
@@ -1200,7 +1200,7 @@ appended to the specified print command.  The default is ``enscript >/dev/null
 .B replyInsertFilter
 An \fIsh\fP command to be executed when the \fIInsert\fP button is activated
 in a composition window.  The full path and filename of the source
-message is appended to the command before being passed to \fIsh\fP(1).
+message is appended to the command before being passed to \fIsh\fP(__appmansuffix__).
 The default filter is \fIcat\fP; i.e. it inserts the entire message
 into the composition.  Interesting filters are:
 \fIsed 's/^/> /'\fP or
@@ -1493,7 +1493,7 @@ MH - to get the location of the \fIMH\fP profile file
 .br
 /tmp - temporary files, see \fBtempDir\fP.
 .SH SEE ALSO
-X(__miscmansuffix__), xrdb(1), X Toolkit Intrinsics, Athena Widget Set, mh(1), enscript(1)
+X(__miscmansuffix__), xrdb(__appmansuffix__), X Toolkit Intrinsics, Athena Widget Set, mh(__appmansuffix__), enscript(__appmansuffix__)
 .br
 At least one book has been published about \fIMH\fP and \fIxmh\fP.
 .SH BUGS
