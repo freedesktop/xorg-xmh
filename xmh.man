@@ -1,7 +1,7 @@
 .\" $XConsortium: xmh.man /main/39 1996/12/09 17:10:05 kaleb $
 .\" Copyright (c) 1989, 1991, 1994  X Consortium
 .\" Copyright 1988, 1989, Digital Equipment Corporation.
-.\" 
+.\"
 .\" Permission is hereby granted, free of charge, to any person obtaining
 .\" a copy of this software and associated documentation files (the
 .\" "Software"), to deal in the Software without restriction, including
@@ -9,10 +9,10 @@
 .\" distribute, sublicense, and/or sell copies of the Software, and to
 .\" permit persons to whom the Software is furnished to do so, subject to
 .\" the following conditions:
-.\" 
+.\"
 .\" The above copyright notice and this permission notice shall be included
 .\" in all copies or substantial portions of the Software.
-.\" 
+.\"
 .\" THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
 .\" OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
 .\" MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
@@ -20,7 +20,7 @@
 .\" OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
 .\" ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 .\" OTHER DEALINGS IN THE SOFTWARE.
-.\" 
+.\"
 .\" Except as contained in this notice, the name of the X Consortium shall
 .\" not be used in advertising or otherwise to promote the sale, use or
 .\" other dealings in this Software without prior written authorization
@@ -39,7 +39,7 @@ The
 .I xmh
 program provides a graphical user interface to the \fIMH\fR Message
 Handling System.  To actually do things with your mail, it makes calls to the
-\fIMH\fR package.  Electronic mail messages may be composed, sent, 
+\fIMH\fR package.  Electronic mail messages may be composed, sent,
 received, replied to, forwarded, sorted, and stored in folders.  \fIxmh\fR
 provides extensive mechanism for customization of the user interface.
 .PP
@@ -51,13 +51,13 @@ This document introduces many aspects of the Athena Widget Set.
 This option specifies an alternate collection of mail folders in which to
 process mail.  The directory is specified as an absolute pathname.
 The default mail path is the value of the Path component in the \fIMH\fP
-profile, which is determined by the \fBMH\fP environment variable and 
-defaults to $HOME/.mh_profile.  $HOME/Mail will be used as the path if 
+profile, which is determined by the \fBMH\fP environment variable and
+defaults to $HOME/.mh_profile.  $HOME/Mail will be used as the path if
 the \fIMH\fP Path is not given in the profile.
 .TP 8
 .B \-initial \fIfolder\fP
 This option specifies an alternate folder which may receive new mail and is
-initially opened by \fIxmh\fR.  
+initially opened by \fIxmh\fR.
 The default initial folder is ``inbox''.
 .TP 8
 .B \-flag
@@ -69,7 +69,7 @@ new mail is waiting.  The application-specific resource \fBcheckNewMail\fP
 can be used to turn off this notification, and the \fB\-flag\fP option will
 still override it.
 .PP
-These three options have corresponding application-specific resources, 
+These three options have corresponding application-specific resources,
 \fBMailPath\fR, \fBInitialFolder\fR, and \fBMailWaitingFlag\fR, which
 can be specified in a resource file.
 .PP
@@ -80,7 +80,7 @@ The standard toolkit command line options are given in \fIX(__miscmansuffix__)\f
 \fIxmh\fR requires that the user is already set up
 to use \fIMH\fR, version 6.  To do so, see if there is a file
 called .mh_profile in your home directory.  If it exists, check to see if it
-contains a line that starts with ``Current-Folder''.  If it does, 
+contains a line that starts with ``Current-Folder''.  If it does,
 you've been using version 4 or earlier of \fIMH\fR; to convert to version
 6, you must remove that line.  (Failure to do so causes spurious output to
 stderr, which can hang \fIxmh\fR depending on your setup.)
@@ -93,9 +93,9 @@ For more information, refer to the \fImh(1)\fP documentation.
 .PP
 Much of the user interface of \fIxmh\fP is configured in the \fIXmh\fP
 application class defaults file; if this file was not installed properly
-a warning message will appear when \fIxmh\fP is used.  \fIxmh\fP is 
+a warning message will appear when \fIxmh\fP is used.  \fIxmh\fP is
 backwards compatible with the R4 application class defaults file.
-.PP 
+.PP
 The default value of the SendBreakWidth resource has changed since R4.
 
 .SH BASIC SCREEN LAYOUT
@@ -107,7 +107,7 @@ Six buttons with pull-down command menus.
 .PP
 .TP 4
 .B \-
-A collection of buttons, one for each top level folder. 
+A collection of buttons, one for each top level folder.
 New users of \fIMH\fP will have two folders, ``drafts'' and ``inbox''.
 .PP
 .TP 4
@@ -132,7 +132,7 @@ data in a window takes up more space than can be displayed.
 The grey bar indicates what portion of your data is visible. Thus, if the
 entire length of the area is grey, then you are looking at all your data.
 If only the first half is grey, then you are looking at the top half of
-your data.  
+your data.
 The message viewing area will have a horizontal scrollbar if the text
 of the message is wider than the viewing area.
 .PP
@@ -151,21 +151,21 @@ the pointer is.
 
 .SS BUTTONBOXES, BUTTONS, AND MENUS
 Any area containing many words or short phrases, each enclosed in a
-rectangular or rounded boundary, is called a \fIbuttonbox\fR.  
+rectangular or rounded boundary, is called a \fIbuttonbox\fR.
 Each rectangle or rounded area is actually a button that you
 can press by moving the pointer onto it and pressing pointer button 1.
 If a given buttonbox has more buttons in it than can fit, it will
 be displayed with a scrollbar, so you can always scroll to the button you
 want.
 .PP
-Some buttons have pull-down menus. 
-Pressing the pointer button while the pointer is over one of these 
-buttons will pull down a menu.  Continuing to hold the button down while 
-moving the 
+Some buttons have pull-down menus.
+Pressing the pointer button while the pointer is over one of these
+buttons will pull down a menu.  Continuing to hold the button down while
+moving the
 pointer over the menu, called dragging the pointer, will highlight each
-selectable item 
+selectable item
 on the menu as the pointer passes over it.  To select an item in the menu,
-release the pointer button while the item is highlighted. 
+release the pointer button while the item is highlighted.
 
 .SS ADJUSTING THE RELATIVE SIZES OF AREAS
 If you're not satisfied with the sizes of the various areas of the main window,
@@ -191,8 +191,8 @@ size.
 
 .SH PROCESSING YOUR MAIL
 This section will define the concepts of the selected folder, current folder,
-selected message(s), current message, selected sequence, and current 
-sequence.  Each \fIxmh\fR command is introduced.  
+selected message(s), current message, selected sequence, and current
+sequence.  Each \fIxmh\fR command is introduced.
 .PP
 For use in customization,
 action procedures corresponding to each command are given; these action
@@ -204,18 +204,18 @@ button box created by the application resource \fBCommandButtonCount\fR.
 A folder contains a collection of mail messages, or is empty.  \fIxmh\fP
 supports folders with one level of subfolders.
 .PP
-The selected folder is whichever foldername appears in the bar above the 
+The selected folder is whichever foldername appears in the bar above the
 folder buttons.  Note that this is not necessarily the same folder that is
-currently being viewed.  
+currently being viewed.
 To change the selected folder, just press on the desired folder button
 with pointer button 1;
 if that folder has subfolders, select a folder from the pull-down menu.
 .PP
 The Table of Contents, or toc, lists the messages in the viewed folder.
-The title bar above the Table of Contents displays the name of the 
+The title bar above the Table of Contents displays the name of the
 viewed folder.
 .PP
-The toc title bar also displays the name of the viewed sequence of messages 
+The toc title bar also displays the name of the viewed sequence of messages
 within the viewed folder.
 Every folder has an implicit ``all'' sequence, which contains all the messages
 in the folder, and initially the toc title bar will show ``inbox:all''.
@@ -226,18 +226,18 @@ The \fIFolder\fR command menu contains commands of a global nature:
 .TP 8
 .B Open Folder
 Display the data in the selected folder.  Thus, the selected folder also
-becomes the viewed folder.  
+becomes the viewed folder.
 The action procedure corresponding
 to this command is \fBXmhOpenFolder(\fR[\fIfoldername\fR]\fB)\fR.
 It takes an optional argument as the name of a folder to select and open; if no
-folder is specified, the selected folder is opened.  It may be specified 
-as part of an event translation from a folder menu button or from a 
+folder is specified, the selected folder is opened.  It may be specified
+as part of an event translation from a folder menu button or from a
 folder menu, or as a binding of a keyboard accelerator to any widget other
 than the folder menu buttons or the folder menus.
 .TP 8
 .B Open Folder in New Window
 Displays the selected folder in an additional main window.
-Note, however, that you cannot reliably display the same folder in more 
+Note, however, that you cannot reliably display the same folder in more
 than one window at a time, although \fIxmh\fR will not prevent you from trying.
 The corresponding action is \fBXmhOpenFolderInNewWindow()\fR.
 .TP 8
@@ -246,11 +246,11 @@ Create a new folder.
 You will be prompted for a name for the new folder;
 to enter the name, move the pointer to the blank box provided and type.
 Subfolders are created by specifying the parent folder, a slash, and the
-subfolder name.  For example, 
+subfolder name.  For example,
 to create a folder named ``xmh'' which is a subfolder of an existing folder
 named ``clients'', type ``clients/xmh''.
 Click on the Okay button when finished, or just type Return;
-click on Cancel to cancel this operation. 
+click on Cancel to cancel this operation.
 The action corresponding to Create Folder is \fBXmhCreateFolder()\fR.
 .PP
 .TP 8
@@ -273,9 +273,9 @@ To highlight a message, click on it with pointer button 1.
 To highlight a range of messages, click on the first one with
 pointer button 1 and on the last one with pointer button 3; or
 press pointer button 1, drag, and release.
-To extend a range of selected messages, use pointer button 3.  
-To highlight all messages in the table of contents, 
-click rapidly three times with pointer button 1.  
+To extend a range of selected messages, use pointer button 3.
+To highlight all messages in the table of contents,
+click rapidly three times with pointer button 1.
 To cancel any selection in the table of contents, click rapidly twice.
 
 The selected messages are the same as the highlighted messages, if any.  If no
@@ -314,10 +314,10 @@ effect, this may also pack the folder.)  The corresponding action is
 \fBXmhSortFolder()\fP.
 .TP 18
 .B Rescan Folder
-Rebuild the list of messages.  This can be used whenever you suspect 
+Rebuild the list of messages.  This can be used whenever you suspect
 that \fIxmh\fR's
 idea of what messages you have is wrong.  (In particular, this is necessary
-if you change things using straight \fIMH\fR commands without using 
+if you change things using straight \fIMH\fR commands without using
 \fIxmh\fR.)  The corresponding action is \fBXmhForceRescan()\fP.
 
 .SS MESSAGE COMMANDS
@@ -348,14 +348,14 @@ The corresponding action is \fBXmhViewPrevious()\fP.
 .TP 18
 .B Delete
 Mark the selected messages for deletion.  If no messages are highlighted,
-mark the current message for deletion and automatically display the 
+mark the current message for deletion and automatically display the
 next unmarked message.
 The corresponding action is \fBXmhMarkDelete()\fP.
 .PP
 .TP 18
 .B Move
 Mark the selected messages to be moved into the currently selected folder.
-(If the selected folder is the same as the viewed folder, 
+(If the selected folder is the same as the viewed folder,
 this command will just beep.)  If no messages are highlighted,
 mark the current message to be moved and display the next unmarked message.
 The corresponding action is \fBXmhMarkMove()\fP.
@@ -365,7 +365,7 @@ The corresponding action is \fBXmhMarkMove()\fP.
 Mark the selected messages to be copied into the selected folder.  (If the
 selected folder is the same as the viewed folder, this command will just
 beep.)  If no messages are highlighted, mark the current message to be
-copied.  Note that messages are actually linked, not copied; editing 
+copied.  Note that messages are actually linked, not copied; editing
 a message copied by \fIxmh\fP will affect all copies of the message.
 The corresponding action is \fBXmhMarkCopy()\fP.
 .PP
@@ -398,10 +398,10 @@ The corresponding action is \fBXmhForward()\fP.
 .B Use as Composition
 Create a composition window whose body is initialized to be the contents
 of the first selected message, or the current message if none are selected.
-Any changes you make in the composition will be saved in a new 
+Any changes you make in the composition will be saved in a new
 message in the ``drafts'' folder, and will not change the original message.
 However, there is an exception to this rule.
-If the message to be used as composition was selected from the ``drafts'' 
+If the message to be used as composition was selected from the ``drafts''
 folder, (see BUGS), the changes will be reflected in the original message
 (see COMPOSITION WINDOWS).  The action procedure corresponding to this
 command is \fBXmhUseAsComposition()\fR.
@@ -420,15 +420,15 @@ message sequences (See MESSAGE-SEQUENCES),
 and a list of the message-sequences defined for the currently viewed folder.
 The selected message-sequence is indicated by a check mark in its entry
 in the margin of the menu.  To change the selected message-sequence,
-select a new message-sequence from the sequence menu.  
+select a new message-sequence from the sequence menu.
 
 .TP 18
 .B Pick Messages
-Define a new message-sequence.  
+Define a new message-sequence.
 The corresponding action is \fBXmhPickMessages()\fP.
 .PP
 The following menu entries will be sensitive only if the current folder
-has any message-sequences other than the ``all'' message-sequence.  
+has any message-sequences other than the ``all'' message-sequence.
 .TP 18
 .B Open Sequence
 Change the viewed sequence to be the same as the selected sequence.
@@ -454,7 +454,7 @@ message-sequence.  The corresponding action is \fBXmhDeleteSequence()\fP.
 Commands in the \fIView\fP menu and in the buttonboxes of view windows
 (which result from the \fIMessage\fP menu command \fBView In New\fP)
 correspond in functionality to commands of the same
-name in the \fIMessage\fP menu, but they operate on the viewed message 
+name in the \fIMessage\fP menu, but they operate on the viewed message
 rather than the selected messages or current message.
 
 .TP 18
@@ -468,7 +468,7 @@ Create a composition window in reply to the viewed message.
 The related action procedure is \fBXmhViewReply()\fR.
 .TP 18
 .B Forward
-Create a composition window whose body is initialized contain an 
+Create a composition window whose body is initialized contain an
 encapsulation of
 the viewed message.  The corresponding action is \fBXmhViewForward()\fR.
 .TP 18
@@ -492,7 +492,7 @@ The corresponding action is \fBXmhSaveView()\fR.
 .TP 18
 .B Print
 Print the viewed message.  \fIxmh\fR prints by invoking
-the \fIenscript\fR(1) command, but this can be customized with the 
+the \fIenscript\fR(1) command, but this can be customized with the
 application-specific resource \fBPrintCommand\fR.
 The corresponding action procedure is \fBXmhPrintView()\fR.
 .TP 18
@@ -506,7 +506,7 @@ The \fIOptions\fR menu contains one entry.
 .TP
 .B Read in Reverse
 When selected, a check mark appears in the margin of this menu entry.
-Read in Reverse will switch the meaning of the next and previous 
+Read in Reverse will switch the meaning of the next and previous
 messages, and will increment to the current message marker
 in the opposite direction.  This is useful
 if you want to read your messages in the order of most recent first.
@@ -515,7 +515,7 @@ undo the effect.  The check mark appears when the option is selected.
 
 .SH COMPOSITION WINDOWS
 Composition windows are created by selecting \fBCompose Message\fP
-from the \fIMessage\fP command menu, or by selecting 
+from the \fIMessage\fP command menu, or by selecting
 \fBReply\fP or \fBForward\fP or \fBUse as Composition\fP from the
 \fIMessage\fP or \fIView\fP command menu.
 These are used to compose mail messages.
@@ -535,12 +535,12 @@ Send this composition.  The corresponding action is \fBXmhSend()\fP.
 .B New Headers
 Replace the current composition with an empty message.  If changes have
 been made since the most recent Send or Save, you will be
-asked to confirm losing them. 
+asked to confirm losing them.
 The corresponding action is \fBXmhResetCompose()\fP.
 .PP
 .TP 18
 .B Compose Message
-Bring up another new composition window.  The corresponding action 
+Bring up another new composition window.  The corresponding action
 is \fBXmhComposeMessage()\fP.
 .PP
 .TP 18
@@ -548,7 +548,7 @@ is \fBXmhComposeMessage()\fP.
 Save this composition in your drafts folder.  Then you can safely close the
 composition.  At some future date, you can continue working on the
 composition by opening the drafts folder, selecting the message, and
-using the ``Use as Composition'' command.  
+using the ``Use as Composition'' command.
 The corresponding action is \fBXmhSave()\fP.
 .PP
 .TP 18
@@ -574,9 +574,9 @@ To mark the highlighted messages,
 or current message if none have been highlighted,
 to be moved to a folder in a single action, use pointer button 3 to select
 the target folder and simultaneously mark the messages.
-Similarly, selecting a sequence with pointer button 3 will add 
+Similarly, selecting a sequence with pointer button 3 will add
 the highlighted or current message(s) to that sequence.
-In both of these operations, the selected folder or sequence 
+In both of these operations, the selected folder or sequence
 and the viewed folder or sequence are not changed.
 
 \fIxmh\fP defines the following keyboard accelerators over the surface of
@@ -609,7 +609,7 @@ All of the text editing commands are actually defined by the Text widget
 in the Athena Widget Set.
 The commands may be bound to different keys than the defaults
 described below through the X Toolkit Intrinsics key re-binding mechanisms.
-See the X Toolkit Intrinsics and the Athena Widget Set documentation for 
+See the X Toolkit Intrinsics and the Athena Widget Set documentation for
 more details.
 
 Whenever you are asked to enter any text, you will be using a standard
@@ -628,7 +628,7 @@ in the window.  A \fIparagraph\fR refers to the text between carriage
 returns.  Text within a paragraph is broken into lines for display based on the
 current width of the window.
 When a message is sent, text is broken into lines based upon the values
-of the \fBSendBreakWidth\fP and \fBSendWidth\fP application-specific 
+of the \fBSendBreakWidth\fP and \fBSendWidth\fP application-specific
 resources.
 
 The following keystroke combinations are defined:
@@ -692,7 +692,7 @@ all changes will be committed during the checkpoint.
 
 Some dialog boxes contain messages from \fIMH\fR.  Occasionally when the
 message is more than one line long,
-not all of the text will be visible.  Clicking on the message field will 
+not all of the text will be visible.  Clicking on the message field will
 cause the dialog box to resize so that you can read the entire message.
 
 .SH MESSAGE-SEQUENCES
@@ -700,7 +700,7 @@ An \fIMH\fP message sequence is just a set of messages associated with some name
 They are local to a particular folder; two different folders can have
 sequences with the same name.  The sequence named ``all'' is predefined in
 every folder; it consists of the set of all messages in that folder.  As
-many as nine sequences may be defined for each folder, including 
+many as nine sequences may be defined for each folder, including
 the predefined ``all'' sequence.  (The
 sequence ``cur'' is also usually defined for every folder; it consists of
 only the current message.  \fIxmh\fR hides ``cur'' from the user, instead
@@ -781,7 +781,7 @@ them, and then hit ``Delete Sequence'' to put things back in their original
 state.
 
 .SH WIDGET HIERARCHY
-In order to specify resources, it is useful to know the hierarchy of 
+In order to specify resources, it is useful to know the hierarchy of
 widgets which compose \fIxmh\fR.  In the notation below, indentation
 indicates hierarchical structure.  The widget class name is given first,
 followed by the widget instance name.
@@ -982,8 +982,8 @@ Xmh xmh
 						Form  rowform
 							Command
 							Command
-						
-.fi				
+
+.fi
 .SH APPLICATION-SPECIFIC RESOURCES
 .PP
 The application class name is \fBXmh\fP.
@@ -1036,7 +1036,7 @@ The foreground color of the busy cursor.  Default is XtDefaultForeground.
 How often to check for new mail, make checkpoints, and rescan the Table
 of Contents, in minutes.  If \fBcheckNewMail\fR is true, \fIxmh\fR checks
 to see if you have new mail each interval.  If \fBmakeCheckpoints\fR is
-true, checkpoints are made every fifth interval.  Also every fifth 
+true, checkpoints are made every fifth interval.  Also every fifth
 interval, the Table of Contents is checked for inconsistencies with the
 file system, and rescanned if out of date.  To prevent all of these checks
 from occurring, set \fBCheckFrequency\fR to 0.  The default is 1.
@@ -1066,7 +1066,7 @@ resource will be used to compose a file name by inserting the message
 number as a string in place of the required single occurrence of `%d'.  If
 the value of the resource is the empty string, or if no `%d' occurs in
 the string, or if "%d" is the value of the resource, the default will be
-used instead.  The default is "%d.CKP".  Checkpointing is done in the 
+used instead.  The default is "%d.CKP".  Checkpointing is done in the
 folder of origin unless an absolute pathname is given.  \fIxmh\fP does
 not assist the user in recovering checkpoints, nor does it provide for
 removal of the checkpoint files.
@@ -1077,7 +1077,7 @@ The number of command buttons to create in a button box in between the toc
 and the view areas of the main window.  \fIxmh\fP will create these buttons
 with the names \fIbutton1, button2\fP and so on, in a box with the name
 \fIcommandBox\fR.   The default is 0.
-\fIxmh\fP users can specify labels and actions for the buttons in a private 
+\fIxmh\fP users can specify labels and actions for the buttons in a private
 resource file; see the section ACTIONS AND INTERFACE CUSTOMIZATION.
 .PP
 .TP 8
@@ -1110,7 +1110,7 @@ Default is ``on''.
 .TP 8
 .B initialFolder
 Which folder to display on startup.  May also be set with the command-line
-option \fB\-initial\fR.  Default is ``inbox''.  
+option \fB\-initial\fR.  Default is ``inbox''.
 .PP
 .TP 8
 .B initialIncFile
@@ -1190,7 +1190,7 @@ Whether to prefix the window and icon name with "xmh: ".  Default is true.
 .PP
 .TP 8
 .B printCommand
-An \fIsh\fP command to execute to print a message.  Note that stdout and 
+An \fIsh\fP command to execute to print a message.  Note that stdout and
 stderr must be specifically redirected.  If a message or range of messages is
 selected for printing, the full file paths of each message file are
 appended to the specified print command.  The default is ``enscript >/dev/null
@@ -1264,7 +1264,7 @@ using ``View Next Message'' and ``View Previous Message''.  Default is true.
 .B stickyMenu
 If true, when popup command menus are used, the most recently selected
 entry will be under the cursor when the menu pops up.  Default is false.
-See the file \fIclients/xmh/Xmh.sample\fR for an example of how to 
+See the file \fIclients/xmh/Xmh.sample\fR for an example of how to
 specify resources for popup command menus.
 .PP
 .TP 8
@@ -1276,9 +1276,9 @@ might want to change this to a private directory.  Default is ``/tmp''.
 .B tocGeometry
 Initial geometry for main \fIxmh\fR toc and view windows.
 .PP
-.TP 8 
+.TP 8
 .B tocPercentage
-The percentage of the main window that is used to display the Table of 
+The percentage of the main window that is used to display the Table of
 Contents.  Default is 33.
 .PP
 .TP 8
@@ -1304,7 +1304,7 @@ file.
 .PP
 To inform \fIxmh\fP about the various mail drops, create a file in your
 home directory called \fI.xmhcheck\fP.  In this file, a mapping between
-existing folder names and mail drops is created by giving a folder name 
+existing folder names and mail drops is created by giving a folder name
 followed by the absolute pathname of the mail drop site, with some white
 space separating them, one mapping per line.  \fIxmh\fP will read this file
 whether or not resources are set for notification of new mail arrival, and
@@ -1326,15 +1326,15 @@ Because \fIxmh\fR provides action procedures which correspond to command
 functionality and installs accelerators, users can customize accelerators
 and new button functionality in a private resource file.
 For examples of specifying customized resources, see the file
-\fImit/clients/xmh/Xmh.sample\fR.  To understand the syntax, see the 
+\fImit/clients/xmh/Xmh.sample\fR.  To understand the syntax, see the
 Appendix of the \fIX Toolkit Intrinsics\fP specification
 on \fITranslation Table Syntax\fP, and any general explanation of
 using and specifying \fIX\fP resources.
-Unpredictable results can occur if 
+Unpredictable results can occur if
 actions are bound to events or widgets for which they were not designed.
 .PP
 Here's an example of how to bind actions to your own \fIxmh\fP buttons,
-and how to redefine the default accelerators so that the Meta key is 
+and how to redefine the default accelerators so that the Meta key is
 not required, in case you don't have access to the sample file mentioned
 above.
 .sp
@@ -1434,7 +1434,7 @@ currently opened folder and updates the sequence menu if necessary.
 .B XmhShellCommand(\fI parameter \fR[\fI, parameter\fR]\fB)\fR
 At least one parameter must be specified.  The parameters will be concatenated
 with a space character separator, into a single string, and the list of
-selected messages, or if no messages are selected, the current message, 
+selected messages, or if no messages are selected, the current message,
 will be appended to the string of parameters.  The string will be executed
 as a shell command.  The messages are always given as absolute pathnames.
 It is an error to cause this action to execute when there are no selected
@@ -1450,11 +1450,11 @@ used to check for new mail, otherwise, \fIxmh\fP checks directly.
 This action is responsible for participation in window manager communication
 protocols.  It responds to delete window and save yourself messages.
 The user can cause \fIxmh\fP to respond to one or both of these protocols,
-exactly as if the window manager had made the request, by invoking the 
-action with the appropriate parameters.  The action is insensitive to the 
-case of the string parameters.  If the event received is a ClientMessage 
-event and parameters are present, at least one of the parameters must 
-correspond to the protocol requested by the event for the request to be 
+exactly as if the window manager had made the request, by invoking the
+action with the appropriate parameters.  The action is insensitive to the
+case of the string parameters.  If the event received is a ClientMessage
+event and parameters are present, at least one of the parameters must
+correspond to the protocol requested by the event for the request to be
 honored by \fIxmh\fP.
 
 .SH CUSTOMIZATION USING \fIMH\fR
@@ -1467,7 +1467,7 @@ successive new composition.
 .PP
 \fIxmh\fP uses \fIMH\fP commands, including \fIinc\fP, \fImsgchk\fP,
 \fIcomp\fP, \fIsend\fP, \fIrepl\fP, \fIforw\fP,
-\fIrefile\fP, \fIrmm\fP, \fIpick\fP, \fIpack\fP, \fIsort\fP, and \fIscan\fP. 
+\fIrefile\fP, \fIrmm\fP, \fIpick\fP, \fIpack\fP, \fIsort\fP, and \fIscan\fP.
 Some flags for these commands can be specified
 in the \fIMH\fP profile; \fIxmh\fP may override them.  The application
 resource \fBdebug\fP can be set to true to see how \fIxmh\fP
@@ -1504,9 +1504,9 @@ window should also be closed by \fIxmh\fP.
 on messages in the \fBDraftsFolder\fP, \fIxmh\fP disallows editing of the
 composition if the same message is also being viewed in another window.
 .br
-- Occasionally after committing changes, the table of contents will appear 
+- Occasionally after committing changes, the table of contents will appear
 to be completely blank when there are actually messages present.
-When this happens, refreshing the display, or typing Control-L in the 
+When this happens, refreshing the display, or typing Control-L in the
 table of contents, will often cause the correct listing to appear.
 If this doesn't work, force a rescan of the folder.
 .br
