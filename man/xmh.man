@@ -265,8 +265,7 @@ Exits \fIxmh\fR, after first confirming that you won't lose any changes;
 or, if selected from any additional \fIxmh\fP window, simply closes that
 window.  The corresponding action is \fBXmhClose()\fP.
 
-.SS HIGHLIGHTED MESSAGES, SELECTED MESSAGES
-.SS AND THE CURRENT MESSAGE
+.SS HIGHLIGHTED MESSAGES, SELECTED MESSAGES, AND THE CURRENT MESSAGE
 It is possible to highlight a set of adjacent messages in the area of the
 Table of Contents.
 To highlight a message, click on it with pointer button 1.
@@ -581,28 +580,29 @@ and the viewed folder or sequence are not changed.
 
 \fIxmh\fP defines the following keyboard accelerators over the surface of
 the main window, except in the view area while editing a message:
-.nf
-	Meta-I		Incorporate New Mail
-	Meta-C		Commit Changes
-	Meta-R		Rescan Folder
-	Meta-P		Pack Folder
-	Meta-S		Sort Folder
+.TS
+l l.
+Meta-I	Incorporate New Mail
+Meta-C	Commit Changes
+Meta-R	Rescan Folder
+Meta-P	Pack Folder
+Meta-S	Sort Folder
 
-	Meta-space	View Next Message
-	Meta-c		Mark Copy
-	Meta-d		Mark Deleted
-	Meta-f		Forward the selected or current message
-	Meta-m		Mark Move
-	Meta-n		View Next Message
-	Meta-p		View Previous Message
-	Meta-r		Reply to the selected or current message
-	Meta-u		Unmark
+Meta-space	View Next Message
+Meta-c	Mark Copy
+Meta-d	Mark Deleted
+Meta-f	Forward the selected or current message
+Meta-m	Mark Move
+Meta-n	View Next Message
+Meta-p	View Previous Message
+Meta-r	Reply to the selected or current message
+Meta-u	Unmark
 
-	Ctrl-V		Scroll the table of contents forward
-	Meta-V		Scroll the table of contents backward
-	Ctrl-v		Scroll the view forward
-	Meta-v		Scroll the view backward
-.fi
+Ctrl-V	Scroll the table of contents forward
+Meta-V	Scroll the table of contents backward
+Ctrl-v	Scroll the view forward
+Meta-v	Scroll the view backward
+.TE
 
 .SH TEXT EDITING COMMANDS
 All of the text editing commands are actually defined by the Text widget
@@ -633,43 +633,63 @@ resources.
 
 The following keystroke combinations are defined:
 .sp
-.nf
-.ta 1.0i 3.0i 4.5i
-Ctrl-a	Beginning Of Line	Meta-b	Backward Word
-Ctrl-b	Backward Character	Meta-f	Forward Word
-Ctrl-d	Delete Next Character	Meta-i	Insert File
-Ctrl-e	End Of Line	Meta-k	Kill To End Of Paragraph
-Ctrl-f	Forward Character	Meta-q	Form Paragraph
-Ctrl-g	Multiply Reset	Meta-v	Previous Page
-Ctrl-h	Delete Previous Character	Meta-y	Insert Current Selection
-Ctrl-j	Newline And Indent	Meta-z	Scroll One Line Down
-Ctrl-k	Kill To End Of Line	Meta-d	Delete Next Word
-Ctrl-l	Redraw Display	Meta-D	Kill Word
-Ctrl-m	Newline	Meta-h	Delete Previous Word
-Ctrl-n	Next Line	Meta-H	Backward Kill Word
-Ctrl-o	Newline And Backup	Meta-<	Beginning Of File
-Ctrl-p	Previous Line	Meta->	End Of File
-Ctrl-r	Search/Replace Backward	Meta-]	Forward Paragraph
-Ctrl-s	Search/Replace Forward	Meta-[	Backward Paragraph
+.TS
+l l.
+Ctrl-a	Beginning Of Line
+Ctrl-b	Backward Character
+Ctrl-d	Delete Next Character
+Ctrl-e	End Of Line
+Ctrl-f	Forward Character
+Ctrl-g	Multiply Reset
+Ctrl-h	Delete Previous Character
+Ctrl-j	Newline And Indent
+Ctrl-k	Kill To End Of Line
+Ctrl-l	Redraw Display
+Ctrl-m	Newline	Meta-h
+Ctrl-n	Next Line
+Ctrl-o	Newline And Backup
+Ctrl-p	Previous Line
+Ctrl-r	Search/Replace Backward
+Ctrl-s	Search/Replace Forward
 Ctrl-t	Transpose Characters
-Ctrl-u	Multiply by 4	Meta-Delete	Delete Previous Word
-Ctrl-v	Next Page	Meta-Shift Delete	Kill Previous Word
-Ctrl-w	Kill Selection	Meta-Backspace	Delete Previous Word
-Ctrl-y	Unkill	Meta-Shift Backspace	Kill Previous Word
+Ctrl-u	Multiply by 4
+Ctrl-v	Next Page
+Ctrl-w	Kill Selection
+Ctrl-y	Unkill
 Ctrl-z	Scroll One Line Up
+Meta-b	Backward Word
+Meta-f	Forward Word
+Meta-i	Insert File
+Meta-k	Kill To End Of Paragraph
+Meta-q	Form Paragraph
+Meta-v	Previous Page
+Meta-y	Insert Current Selection
+Meta-z	Scroll One Line Down
+Meta-d	Delete Next Word
+Meta-D	Kill Word
+Delete Previous Word
+Meta-H	Backward Kill Word
+Meta-<	Beginning Of File
+Meta->	End Of File
+Meta-]	Forward Paragraph
+Meta-[	Backward Paragraph
+Meta-Delete	Delete Previous Word
+Meta-Shift Delete	Kill Previous Word
+Meta-Backspace	Delete Previous Word
+Meta-Shift Backspace	Kill Previous Word
+.TE
 .sp
 In addition, the pointer may be used to copy and paste text:
-.ta .5i 2.0i
-	Button 1 Down	Start Selection
-	Button 1 Motion	Adjust Selection
-	Button 1 Up	End Selection (copy)
-
-	Button 2 Down	Insert Current Selection (paste)
-
-	Button 3 Down	Extend Current Selection
-	Button 3 Motion	Adjust Selection
-	Button 3 Up	End Selection (copy)
-.fi
+.TS 
+l l.
+Button 1 Down	Start Selection
+Button 1 Motion	Adjust Selection
+Button 1 Up	End Selection (copy)
+Button 2 Down	Insert Current Selection (paste)
+Button 3 Down	Extend Current Selection
+Button 3 Motion	Adjust Selection
+Button 3 Up	End Selection (copy)
+.TE
 .sp
 .SH CONFIRMATION DIALOG BOXES
 Whenever you press a button that may cause you to lose some work or is
@@ -792,197 +812,226 @@ toc and view windows, except that a TopLevelShell widget is inserted
 in the hierarchy between the application shell and the Paned widget.
 .sp
 .nf
-.ta .5i 1.0i 1.5i 2.0i 2.5i 3.0i 3.5i 4.0i 4.5i 5.0i 5.5i 6.0i 6.5i 7.0i
+.ft CW
 Xmh xmh
-	Paned xmh
-		SimpleMenu  folderMenu
-			SmeBSB  open
-			SmeBSB  openInNew
-			SmeBSB  create
-			SmeBSB  delete
-			SmeLine  line
-			SmeBSB  close
-		SimpleMenu  tocMenu
-			SmeBSB  inc
-			SmeBSB  commit
-			SmeBSB  pack
-			SmeBSB  sort
-			SmeBSB  rescan
-		SimpleMenu  messageMenu
-			SmeBSB  compose
-			SmeBSB  next
-			SmeBSB  prev
-			SmeBSB  delete
-			SmeBSB  move
-			SmeBSB  copy
-			SmeBSB  unmark
-			SmeBSB  viewNew
-			SmeBSB  reply
-			SmeBSB  forward
-			SmeBSB  useAsComp
-			SmeBSB  print
-		SimpleMenu  sequenceMenu
-			SmeBSB  pick
-			SmeBSB  openSeq
-			SmeBSB  addToSeq
-			SmeBSB  removeFromSeq
-			SmeBSB  deleteSeq
-			SmeLine  line
-			SmeBSB  all
-		SimpleMenu  viewMenu
-			SmeBSB  reply
-			SmeBSB  forward
-			SmeBSB  useAsComp
-			SmeBSB  edit
-			SmeBSB  save
-			SmeBSB  print
-		SimpleMenu  optionMenu
-			SmeBSB  reverse
-		Viewport.Core  menuBox.clip
-			Box  menuBox
-				MenuButton  folderButton
-				MenuButton  tocButton
-				MenuButton  messageButton
-				MenuButton  sequenceButton
-				MenuButton  viewButton
-				MenuButton  optionButton
-		Grip  grip
-		Label folderTitlebar
-		Grip  grip
-		Viewport.Core  folders.clip
-			Box  folders
-				MenuButton  inbox
-				MenuButton  drafts
-					SimpleMenu  menu
-						SmeBSB <folder_name>
-							.
-							.
-							.
+        Paned xmh
+                SimpleMenu  folderMenu
+                        SmeBSB  open
+                        SmeBSB  openInNew
+                        SmeBSB  create
+                        SmeBSB  delete
+                        SmeLine  line
+                        SmeBSB  close
+                SimpleMenu  tocMenu
+                        SmeBSB  inc
+                        SmeBSB  commit
+                        SmeBSB  pack
+                        SmeBSB  sort
+                        SmeBSB  rescan
+                SimpleMenu  messageMenu
+                        SmeBSB  compose
+                        SmeBSB  next
+                        SmeBSB  prev
+                        SmeBSB  delete
+                        SmeBSB  move
+                        SmeBSB  copy
+                        SmeBSB  unmark
+                        SmeBSB  viewNew
+                        SmeBSB  reply
+                        SmeBSB  forward
+                        SmeBSB  useAsComp
+                        SmeBSB  print
+                SimpleMenu  sequenceMenu
+                        SmeBSB  pick
+                        SmeBSB  openSeq
+                        SmeBSB  addToSeq
+                        SmeBSB  removeFromSeq
+                        SmeBSB  deleteSeq
+                        SmeLine  line
+                        SmeBSB  all
+                SimpleMenu  viewMenu
+                        SmeBSB  reply
+                        SmeBSB  forward
+                        SmeBSB  useAsComp
+                        SmeBSB  edit
+                        SmeBSB  save
+                        SmeBSB  print
+                SimpleMenu  optionMenu
+                        SmeBSB  reverse
+                Viewport.Core  menuBox.clip
+                        Box  menuBox
+                                MenuButton  folderButton
+                                MenuButton  tocButton
+                                MenuButton  messageButton
+                                MenuButton  sequenceButton
+                                MenuButton  viewButton
+                                MenuButton  optionButton
+                Grip  grip
+                Label folderTitlebar
+                Grip  grip
+                Viewport.Core  folders.clip
+                        Box  folders
+                                MenuButton  inbox
+                                MenuButton  drafts
+                                        SimpleMenu  menu
+                                                SmeBSB <folder_name>
+                                                        .
+                                                        .
+                                                        .
 
-		Grip  grip
-		Label  tocTitlebar
-		Grip  grip
-		Text toc
-			Scrollbar  vScrollbar
-		Grip  grip
-		Label  viewTitlebar
-		Grip  grip
-		Text  view
-			Scrollbar  vScrollbar
-			Scrollbar  hScrollbar
+                Grip  grip
+                Label  tocTitlebar
+                Grip  grip
+                Text toc
+                        Scrollbar  vScrollbar
+                Grip  grip
+                Label  viewTitlebar
+                Grip  grip
+                Text  view
+                        Scrollbar  vScrollbar
+                        Scrollbar  hScrollbar
+.ft
+.fi
 .sp
-\fIThe hierarchy of the Create Folder popup dialog box:\fR
+The hierarchy of the Create Folder popup dialog box:
 .sp
-	TransientShell  prompt
-		Dialog  dialog
-			Label  label
-			Text  value
-			Command  okay
-			Command  cancel
+.nf
+.ft CW
+        TransientShell  prompt
+                Dialog  dialog
+                        Label  label
+                        Text  value
+                        Command  okay
+                        Command  cancel
+.ft
+.fi
 .sp
-\fIThe hierarchy of the Notice dialog box, which reports messages from MH:\fR
+The hierarchy of the Notice dialog box, which reports messages from MH:
 .sp
-	TransientShell  notice
-		Dialog  dialog
-			Label  label
-			Text  value
-			Command  confirm
+.nf
+.ft CW
+        TransientShell  notice
+                Dialog  dialog
+                        Label  label
+                        Text  value
+                        Command  confirm
+.ft
+.fi
 .sp
-\fIThe hierarchy of the Confirmation dialog box:\fR
+The hierarchy of the Confirmation dialog box:
 .sp
-	TransientShell  confirm
-		Dialog  dialog
-			Label  label
-			Command  yes
-			Command  no
+.nf
+.ft CW
+        TransientShell  confirm
+                Dialog  dialog
+                        Label  label
+                        Command  yes
+                        Command  no
+.ft
+.fi
 .sp
-\fIThe hierarchy of the dialog box which reports errors:\fR
+The hierarchy of the dialog box which reports errors:
 .sp
-	TransientShell  error
-		Dialog  dialog
-			Label  label
-			Command  OK
+.nf
+.ft CW
+        TransientShell  error
+                Dialog  dialog
+                        Label  label
+                        Command  OK
+.ft
+.fi
 .sp
-\fIThe hierarchy of the composition window:\fR
+The hierarchy of the composition window:
 .sp
-	TopLevelShell  xmh
-		Paned  xmh
-			Label  composeTitlebar
-			Text  comp
-			Viewport.Core  compButtons.clip
-				Box  compButtons
-					Command  close
-					Command  send
-					Command  reset
-					Command  compose
-					Command  save
-					Command  insert
+.nf
+.ft CW
+        TopLevelShell  xmh
+                Paned  xmh
+                        Label  composeTitlebar
+                        Text  comp
+                        Viewport.Core  compButtons.clip
+                                Box  compButtons
+                                        Command  close
+                                        Command  send
+                                        Command  reset
+                                        Command  compose
+                                        Command  save
+                                        Command  insert
+.ft
+.fi
 .sp
-\fIThe hierarchy of the view window:\fR
+The hierarchy of the view window:
 .sp
-	TopLevelShell  xmh
-		Paned  xmh
-			Label  viewTitlebar
-			Text  view
-			Viewport.Core  viewButtons.clip
-				Box  viewButtons
-					Command  close
-					Command  reply
-					Command  forward
-					Command  useAsComp
-					Command  edit
-					Command  save
-					Command  print
-					Command  delete
+.nf
+.ft CW
+        TopLevelShell  xmh
+                Paned  xmh
+                        Label  viewTitlebar
+                        Text  view
+                        Viewport.Core  viewButtons.clip
+                                Box  viewButtons
+                                        Command  close
+                                        Command  reply
+                                        Command  forward
+                                        Command  useAsComp
+                                        Command  edit
+                                        Command  save
+                                        Command  print
+                                        Command  delete
+.ft
+.fi
 .sp
-\fIThe hierarchy of the pick window:\fR
-\fI(Unnamed widgets have no name.)\fR
+The hierarchy of the pick window:
+(Unnamed widgets have no name.)
 .sp
-	TopLevelShell  xmh
-		Paned  xmh
-			Label  pickTitlebar
-			Viewport.Core  pick.clip
-				Form  form
-					Form  groupform
+.nf
+.ft CW
+        TopLevelShell  xmh
+                Paned  xmh
+                        Label  pickTitlebar
+                        Viewport.Core  pick.clip
+                                Form  form
+                                        Form  groupform
 \fIThe first 6 rows of the pick window have identical structure:\fR
-						Form  rowform
-							Toggle
-							Toggle
-							Label
-							Text
-							Command
+                                                Form  rowform
+                                                        Toggle
+                                                        Toggle
+                                                        Label
+                                                        Text
+                                                        Command
 
-						Form  rowform
-							Toggle
-							Toggle
-							Text
-							Text
-							Command
-						Form  rowform
-							Command
-			Viewport.core  pick.clip
-				Form  form
-					From  groupform
-						Form  rowform
-							Label
-							Text
-							Label
-							Text
-						Form  rowform
-							Label
-							Text
-							Label
-							Text
-							Label
-							Text
-						Form  rowform
-							Label
-							Toggle
-							Toggle
-						Form  rowform
-							Command
-							Command
+                                                Form  rowform
+                                                        Toggle
+                                                        Toggle
+                                                        Text
+                                                        Text
+                                                        Command
+                                                Form  rowform
+                                                        Command
+                        Viewport.core  pick.clip
+                                Form  form
+                                        From  groupform
+                                                Form  rowform
+                                                        Label
+                                                        Text
+                                                        Label
+                                                        Text
+                                                Form  rowform
+                                                        Label
+                                                        Text
+                                                        Label
+                                                        Text
+                                                        Label
+                                                        Text
+                                                Form  rowform
+                                                        Label
+                                                        Toggle
+                                                        Toggle
+                                                Form  rowform
+                                                        Command
+                                                        Command
 
+.ft
 .fi
 .SH APPLICATION-SPECIFIC RESOURCES
 .PP
@@ -1341,48 +1390,48 @@ above.
 .nf
 ! To create buttons in the middle of the main window and give them semantics:
 
-Xmh*CommandButtonCount:		5
+Xmh*CommandButtonCount:         5
 
-Xmh*commandBox.button1.label:	Inc
+Xmh*commandBox.button1.label:   Inc
 Xmh*commandBox.button1.translations: #override\\
-	<Btn1Down>,<Btn1Up>: XmhIncorporateNewMail() unset()
+        <Btn1Down>,<Btn1Up>: XmhIncorporateNewMail() unset()
 
-Xmh*commandBox.button2.label:	Compose
+Xmh*commandBox.button2.label:   Compose
 Xmh*commandBox.button2.translations: #override\\
-	<Btn1Down>,<Btn1Up>: XmhComposeMessage() unset()
+        <Btn1Down>,<Btn1Up>: XmhComposeMessage() unset()
 
-Xmh*commandBox.button3.label:	Next
+Xmh*commandBox.button3.label:   Next
 Xmh*commandBox.button3.translations: #override\\
-	<Btn1Down>,<Btn1Up>: XmhViewNextMessage() unset()
+        <Btn1Down>,<Btn1Up>: XmhViewNextMessage() unset()
 
-Xmh*commandBox.button4.label:	Delete
+Xmh*commandBox.button4.label:   Delete
 Xmh*commandBox.button4.translations: #override\\
-	<Btn1Down>,<Btn1Up>: XmhMarkDelete() unset()
+        <Btn1Down>,<Btn1Up>: XmhMarkDelete() unset()
 
-Xmh*commandBox.button5.label:	Commit
+Xmh*commandBox.button5.label:   Commit
 Xmh*commandBox.button5.translations: #override\\
-	<Btn1Down>,<Btn1Up>: XmhCommitChanges() unset()
+        <Btn1Down>,<Btn1Up>: XmhCommitChanges() unset()
 
 ! To redefine the accelerator bindings to exclude modifier keys,
 ! and add your own keyboard accelerator for Compose Message:
 
 Xmh*tocMenu.accelerators: #override\\n\\
-	!:<Key>I:	XmhIncorporateNewMail()\\n\\
-	!:<Key>C: 	XmhCommitChanges()\\n\\
-	!:<Key>R:	XmhForceRescan()\\n\\
-	!:<Key>P:	XmhPackFolder()\\n\\
-	!:<Key>S:	XmhSortFolder()\\n
+        !:<Key>I:       XmhIncorporateNewMail()\\n\\
+        !:<Key>C:       XmhCommitChanges()\\n\\
+        !:<Key>R:       XmhForceRescan()\\n\\
+        !:<Key>P:       XmhPackFolder()\\n\\
+        !:<Key>S:       XmhSortFolder()\\n
 Xmh*messageMenu.accelerators: #override\\n\\
-	!:<Key>E:	XmhComposeMessage()\\n\\
-	!<Key>space:    XmhViewNextMessage()\\n\\
-	!:<Key>c:	XmhMarkCopy()\\n\\
-	!:<Key>d:	XmhMarkDelete()\\n\\
-	!:<Key>f:	XmhForward()\\n\\
-	!:<Key>m:	XmhMarkMove()\\n\\
-	!:<Key>n:	XmhViewNextMessage()\\n\\
-	!:<Key>p:	XmhViewPreviousMessage()\\n\\
-	!:<Key>r:	XmhReply()\\n\\
-	!:<Key>u:	XmhUnmark()\\n
+        !:<Key>E:       XmhComposeMessage()\\n\\
+        !<Key>space:    XmhViewNextMessage()\\n\\
+        !:<Key>c:       XmhMarkCopy()\\n\\
+        !:<Key>d:       XmhMarkDelete()\\n\\
+        !:<Key>f:       XmhForward()\\n\\
+        !:<Key>m:       XmhMarkMove()\\n\\
+        !:<Key>n:       XmhViewNextMessage()\\n\\
+        !:<Key>p:       XmhViewPreviousMessage()\\n\\
+        !:<Key>r:       XmhReply()\\n\\
+        !:<Key>u:       XmhUnmark()\\n
 .fi
 .PP
 \fIxmh\fR provides action procedures
