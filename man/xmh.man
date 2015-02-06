@@ -645,7 +645,7 @@ Ctrl-h	Delete Previous Character
 Ctrl-j	Newline And Indent
 Ctrl-k	Kill To End Of Line
 Ctrl-l	Redraw Display
-Ctrl-m	Newline	Meta-h
+Ctrl-m	Newline
 Ctrl-n	Next Line
 Ctrl-o	Newline And Backup
 Ctrl-p	Previous Line
@@ -667,7 +667,7 @@ Meta-y	Insert Current Selection
 Meta-z	Scroll One Line Down
 Meta-d	Delete Next Word
 Meta-D	Kill Word
-Delete Previous Word
+Meta-h	Delete Previous Word
 Meta-H	Backward Kill Word
 Meta-<	Beginning Of File
 Meta->	End Of File
